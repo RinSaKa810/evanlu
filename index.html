@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#eef3f8">
+  <meta name="description" content="Interactive envelope with letter">
+  <title>Interactive Envelope</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <div class="music-controls">
+      <button class="music-toggle" id="music-toggle" type="button" aria-pressed="false" aria-label="Turn on background music" title="Toggle background music">
+        <span class="music-icon">♬</span>
+      </button>
+    </div>
+    <div class="music-player" aria-hidden="true">
+    <audio
+        id="music-audio"loop>
+    </audio>
+</div>
+
+    <section class="hero">
+      <div class="envelope-wrapper">
+        <button class="envelope" type="button" aria-expanded="false" aria-label="Open letter">
+          <div class="envelope-body"></div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-seal">
+            <div class="heart"></div>
+          </div>
+        </button>
+        <p class="hint">Hãy ấn vào để mở thư</p>
+      </div>
+    </section>
+
+    <div class="letter-overlay" aria-hidden="true">
+      <div class="portrait-background" aria-hidden="true">
+        <div class="portrait-row row-top">
+          <div class="portrait-card" style="background-image:url(picture/T1.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/8e/52/79/8e5279890bedd6cff0a303eafd52cfda.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/91/59/54/9159542275020072fd9c4de06147935c.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/originals/75/91/03/7591038495c811156a9cb819e629b272.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://tse3.mm.bing.net/th/id/OIP.u3HKAbiin7KI7Zv5eW0fVwHaLQ?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/5e/26/c5/5e26c50abfda8d2f32181bb9498709dd.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://cdn.donmai.us/sample/11/96/__protagonist_and_lu_chen_light_and_night_love__sample-1196a6808c7ff7c00afaf278547f0dfe.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://static.zerochan.net/Guang.Yu.Ye.Zhi.Lian.full.3948524.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://s1.zerochan.net/Guang.Yu.Ye.Zhi.Lian.600.3949244.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/e8/e6/65/e8e6652805a10833af0fbf968c832281.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/bf/be/38/bfbe38b1cfcde08c80fe4fb32c7eb64d.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/originals/75/91/03/7591038495c811156a9cb819e629b272.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://tse3.mm.bing.net/th/id/OIP.ORqzxC4wYRPCz5OjtampoQAAAA?cb=thfvnextfalcon3&w=474&h=722&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+          <div class="portrait-card" style="background-image:url(https://tse3.mm.bing.net/th/id/OIP.AB3L6FmEuuiq9eBOmiNQzgHaLR?cb=thfvnextfalcon3&w=736&h=1121&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/d0/24/fa/d024fab0cd25c1e4e93446942f980eed.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/4a/62/5c/4a625c7aa7da06e685a0922e0f9d40f6.jpg)"></div>
+        </div>
+        <div class="portrait-row row-middle">
+          <div class="portrait-track">
+            <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/31/6a/b9/316ab953b26cf7ed98fd15bfdc43f446.jpg)"></div>
+            <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/08/ca/59/08ca59bd98319984cc95bd305717475d.jpg)"></div>
+            <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/55/ec/32/55ec328e7cd129ea3e45ec0a69d722f0.jpg)"></div>
+            <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/36/60/6a/36606ac68356d6281daa3000ef909343.jpg)"></div>
+            <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/f2/97/fc/f297fc31efe188af8c60c978974ad728.jpg)"></div>
+            <div class="portrait-card" style="background-image:url(https://tse3.mm.bing.net/th/id/OIP.Zu7y8uEiuaFxWEbtrphQfQHaKd?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+            <div class="portrait-card" style="background-image:url(https://tse3.mm.bing.net/th/id/OIP.djkdkzEEIEmcNZxqZ3wwNQHaLj?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+            <div class="portrait-card" style="background-image:url(https://i.pinimg.com/originals/ad/31/3b/ad313bb023f43e3a8324985401390944.jpg)"></div>
+            <div class="portrait-card" style="background-image:url(https://tse2.mm.bing.net/th/id/OIP.WJ1xxoKu3gQHV3unV_rurwHaKr?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+            <div class="portrait-card" style="background-image:url(https://i.pinimg.com/originals/ab/b7/30/abb730aa833f0c46ec595e2c246da0a4.jpg)"></div>
+            <div class="portrait-card" style="background-image:url(https://tse1.explicit.bing.net/th/id/OIP.XWURA-lDwecwF4XiNj4ehAHaL_?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+            <div class="portrait-card" style="background-image:url(https://tse4.mm.bing.net/th/id/OIP.ttKS9Oe3BLrYkmYlpN2K3gHaNK?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+          </div>
+          <div class="portrait-track">
+            <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/31/6a/b9/316ab953b26cf7ed98fd15bfdc43f446.jpg)"></div>
+            <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/08/ca/59/08ca59bd98319984cc95bd305717475d.jpg)"></div>
+            <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/55/ec/32/55ec328e7cd129ea3e45ec0a69d722f0.jpg)"></div>
+            <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/36/60/6a/36606ac68356d6281daa3000ef909343.jpg)"></div>
+            <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/f2/97/fc/f297fc31efe188af8c60c978974ad728.jpg)"></div>
+            <div class="portrait-card" style="background-image:url(https://tse3.mm.bing.net/th/id/OIP.Zu7y8uEiuaFxWEbtrphQfQHaKd?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+            <div class="portrait-card" style="background-image:url(https://tse3.mm.bing.net/th/id/OIP.djkdkzEEIEmcNZxqZ3wwNQHaLj?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+            <div class="portrait-card" style="background-image:url(https://i.pinimg.com/originals/ad/31/3b/ad313bb023f43e3a8324985401390944.jpg)"></div>
+            <div class="portrait-card" style="background-image:url(https://tse2.mm.bing.net/th/id/OIP.WJ1xxoKu3gQHV3unV_rurwHaKr?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+            <div class="portrait-card" style="background-image:url(https://i.pinimg.com/originals/ab/b7/30/abb730aa833f0c46ec595e2c246da0a4.jpg)"></div>
+            <div class="portrait-card" style="background-image:url(https://tse1.explicit.bing.net/th/id/OIP.XWURA-lDwecwF4XiNj4ehAHaL_?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+            <div class="portrait-card" style="background-image:url(https://tse4.mm.bing.net/th/id/OIP.ttKS9Oe3BLrYkmYlpN2K3gHaNK?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+          </div>
+        </div>
+        <div class="portrait-row row-bottom">
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/originals/fa/0b/4f/fa0b4f829a2046c8545bbcee693b6c7f.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/79/d2/ac/79d2ac3bee86538b8f711368557df2da.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://tse1.mm.bing.net/th/id/OIP.Y6LaNGVCh25e9V110bmq9AHaKe?cb=thfvnextfalcon3&w=1024&h=1449&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/originals/dd/0c/2b/dd0c2b0e859b7ce095913c6058bcc923.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/82/83/3a/82833a92956d8cd5f51268fc5fbd77e7.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/13/2e/85/132e85d495f305d7f997e689e506207b.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://tse4.mm.bing.net/th/id/OIP.GXv-PZ9qGRj5-L3pRaXmngHaKt?cb=thfvnextfalcon3&w=1200&h=1736&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+          <div class="portrait-card" style="background-image:url(https://tse1.explicit.bing.net/th/id/OIP.jYXng_Ft83ypQ4Fcf_bRLwHaLL?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/73/d5/6d/73d56d5579b43fa367d3f0d627303b9f.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://tse1.explicit.bing.net/th/id/OIP.NlSK5LvLRCs82zSD9fSH9wHaLQ?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/originals/6c/e1/12/6ce112082ab7caeea629c44ff75b78ce.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/95/af/bb/95afbb802ae334b8dda181a1e0a5a0c8.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/550x/7c/fa/85/7cfa856ec18db82200b29f8e61f6f872.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://tse1.explicit.bing.net/th/id/OIP.NlSK5LvLRCs82zSD9fSH9wHaLQ?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/originals/6c/e1/12/6ce112082ab7caeea629c44ff75b78ce.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/736x/95/af/bb/95afbb802ae334b8dda181a1e0a5a0c8.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://i.pinimg.com/550x/7c/fa/85/7cfa856ec18db82200b29f8e61f6f872.jpg)"></div>
+          <div class="portrait-card" style="background-image:url(https://tse4.mm.bing.net/th/id/OIP.ZaE_9eFr7J3eOpYoDLmpGgHaLL?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3)"></div>
+        </div>
+      </div>
+      <div class="letter-card" role="dialog" aria-label="Letter content">
+        <div class="letter-content">
+        <h1>Gửi em,</h1>
+        <p>Vũ trụ này rộng lớn đến mức, tất cả những gì chúng ta từng chạm vào chỉ như một hạt bụi nhỏ nhoi trong không gian. Thế nhưng, trong cái vũ trụ tăm tối và lạnh lẽo ấy, em lại là điểm sáng duy nhất mà tôi luôn dõi theo.
+        </p>
+        <p>Tôi từng nói với Leo Lee rằng, tổ chức cứu trợ nhân loại Tháp Trung Tâm giờ đây giống như một hố đen đang chết dần, liên tục nuốt chửng mọi thứ xung quanh để duy trì sự tồn tại. 
+        </p>
+        <p>Và tôi đã chọn trở thành hạt điện tích âm cuối cùng bị hố đen ấy nuốt chửng, để khi nó hoàn toàn tiêu tan, một trật tự thế giới mới sẽ được thiết lập. Từ khoảnh khắc đó, tôi đã định sẵn cho mình một con đường không có lối thoát, cho đến khi em thực sự bước vào cuộc đời tôi.
+        </p>
+        <p>Ký ức thường đưa tôi về những ngày chúng ta còn ở học viện, khi tôi mang mã danh "E" trong máy mô phỏng chiến lược, âm thầm chờ đợi em vượt qua kỷ lục của mình. Lần em lạc vào "vùng tối mật" và phải đối mặt với ảo ảnh tàn khốc về dự án Kepler của bà ngoại, tôi đã nắm lấy tay em, dạy em cách dùng đốt ngón tay để bóp cò súng nhằm kết thúc cơn ác mộng. 
+        </p>
+        <p>Khi đó, nhìn vào đôi mắt kiên cường nhưng vẫn còn chút sợ hãi của em, tôi đã tự nhủ và hứa với em rằng: chỉ cần em cần đến tôi, tôi sẽ luôn ở đó.
+        </p>
+        <p>Nhưng để thay đổi thế giới mục nát này, tôi buộc phải trở thành một kẻ tàn nhẫn. Tôi thăng tiến lên đỉnh cao của Tháp Trung Tâm, khoác lên mình lớp vỏ bọc lạnh lùng của một Giám đốc điều hành, thực thi những mệnh lệnh tàn bạo nhất. Tôi biết rõ sự thật dơ bẩn đằng sau sự lụi tàn của nhân loại: chính thí nghiệm IFF của Tháp Trung Tâm đã tạo ra quái vật biến dị, còn dự án Kepler của bà em chỉ là một vật tế thần bị vu oan. Tôi che giấu mọi thứ, âm thầm để lại tài liệu tối mật trên bàn cho em, chấp nhận để em nhìn tôi như một kẻ máu lạnh, bởi tôi muốn gánh vác mọi tội lỗi và bóng tối, giữ cho em sự trong sạch và lý tưởng vẹn nguyên.
+        </p>
+        <p>Mối quan hệ của chúng ta cứ thế rạn nứt. Nhìn em xin từ chức, rời xa tôi để gia nhập Ban Thư ký – phe đối lập với tôi, trái tim tôi dù đau đớn nhưng đành phải chấp nhận.
+        </p>
+        <p>Trong bữa tối cuối cùng tại nhà tôi, tôi đã dùng nước biển nhân tạo để nuôi những con hàu, mô phỏng lại nhịp thủy triều của một đại dương đã biến mất từ hàng trăm năm trước. Em hỏi tôi có phải đang tạo ra một vùng biển cho riêng mình không, nhưng em ngốc nghếch của tôi ơi, tôi làm vậy vì tôi luôn hy vọng rằng chúng ta sẽ cùng nhau đi đến đích đến cuối cùng.
+        </p>
+        <p>Nhưng tôi biết, con đường tôi chọn không thể có em đồng hành. Tháp Trung Tâm đang âm mưu chế tạo khu dân cư trên Mặt Trăng để bỏ mặc hàng tỷ dân thường chờ chết ở Trái Đất. Cách duy nhất để ngăn chặn chúng, để cứu lấy nhân loại, là tôi phải tự tay đập tan hệ thống này từ bên trong.
+        </p>
+        <p>Để biến em trở thành người lãnh đạo danh chính ngôn thuận, tôi đã lên kế hoạch cho một cái chết không thể chối cãi. Tại máy mô phỏng chiến lược, tôi đưa ra kíp nổ đe dọa hủy diệt tọa độ hành tinh sống duy nhất cách chúng ta 50 năm ánh sáng, dồn em vào bước đường cùng. Tôi biết em sẽ không nỡ giết tôi, em chỉ chĩa súng vào cánh tay tôi để ngăn cản. Nhưng em không hề biết rằng, tôi đã âm thầm cài đặt chương trình vào khẩu súng của em từ trước, để ngay khi em bóp cò, viên đạn sẽ tự động chuyển hướng, găm thẳng vào trái tim tôi.
+        </p>
+        <p>Khoảnh khắc viên đạn xuyên qua ngực, tôi mỉm cười ngã xuống. Cuối cùng, tôi cũng đã hoàn thành tâm nguyện. Bằng cái chết này, tôi đã dọn sạch mọi chướng ngại vật trong bóng tối, ôm lấy mọi tội ác của thế giới cũ, để em bước lên đỉnh cao quyền lực dưới sự tin tưởng của toàn nhân loại.
+        </p>
+        <p>Xin lỗi vì đã để em lại một mình đối mặt với tương lai. Xin lỗi vì không thể cho em biết sự thật sớm hơn. Hãy sống thật tốt, hướng dẫn nhân loại đến ngôi nhà mới. Và xin em đừng buồn, hãy đợi cho đến ngày đóa hoa hồng xanh trong lọ trên bàn làm việc của tôi nở rộ. Vào một ngày nào đó, khi thế giới tàn lụi và tái sinh, chúng ta nhất định sẽ gặp lại nhau
+        </p>
+        <p class="letter-love">Tôi yêu em,</p>
+        <p class="letter-name">Lục Trầm.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
