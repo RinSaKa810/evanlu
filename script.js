@@ -4,7 +4,7 @@ const letterCard = document.querySelector('.letter-card');
 const musicToggle = document.querySelector('.music-toggle');
 const volumeSlider = document.querySelector('.volume-slider');
 const musicAudio = document.querySelector('#music-audio');
-const MUSIC_URL = 'bgmm.mp3'; 
+const MUSIC = 'bgmm.mp3'; 
 
 // Detect if device supports hover (non-touch)
 const isTouchDevice = () => {
@@ -72,7 +72,7 @@ function setMusicState(enabled) {
   musicToggle.setAttribute('aria-label', enabled ? 'Turn off background music' : 'Turn on background music');
 
   if (enabled) {
-    musicAudio.src = MUSIC_URL;
+    musicAudio.src = MUSIC;
     musicAudio.play().catch(err => console.log('Autoplay prevented:', err));
   } else {
     musicAudio.pause();
