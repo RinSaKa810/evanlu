@@ -5,6 +5,15 @@ const musicToggle = document.querySelector('.music-toggle');
 const volumeSlider = document.querySelector('.volume-slider');
 const musicAudio = document.querySelector('#music-audio');
 const MUSIC = 'bgmm.mp3'; 
+const OPEN_SOUND_URL = 'open-sound.mp3';
+const openSound = new Audio(OPEN_SOUND_URL);
+openSound.preload = 'auto';
+openSound.volume = 0.8;
+
+function playOpenSound() {
+  openSound.currentTime = 0;
+  openSound.play().catch(() => {});
+}
 
 // Detect if device supports hover (non-touch)
 const isTouchDevice = () => {
