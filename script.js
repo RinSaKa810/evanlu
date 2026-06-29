@@ -4,7 +4,7 @@ const letterCard = document.querySelector('.letter-card');
 const musicToggle = document.querySelector('.music-toggle');
 const volumeSlider = document.querySelector('.volume-slider');
 const musicAudio = document.querySelector('#music-audio');
-const MUSIC_URL = 'music/bgmm.mp3'; 
+const MUSIC_URL = 'bgmm.mp3'; 
 
 // Detect if device supports hover (non-touch)
 const isTouchDevice = () => {
