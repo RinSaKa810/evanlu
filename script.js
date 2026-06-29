@@ -4,15 +4,35 @@ const letterCard = document.querySelector('.letter-card');
 const musicToggle = document.querySelector('.music-toggle');
 const volumeSlider = document.querySelector('.volume-slider');
 const musicAudio = document.querySelector('#music-audio');
-const MUSIC = 'bgmm.mp3'; 
-const OPEN_SOUND_URL = 'open-sound.mp3';
-const openSound = new Audio(OPEN_SOUND_URL);
-openSound.preload = 'auto';
-openSound.volume = 0.8;
+const MUSIC_URL = 'bgmm.mp3'; // Replace with path to your MP3 file
+const AudioCtor = typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext);
+const audioContext = AudioCtor ? new AudioCtor() : null;
 
 function playOpenSound() {
-  openSound.currentTime = 0;
-  openSound.play().catch(() => {});
+  if (!audioContext) return;
+
+  const playTone = () => {
+    const now = audioContext.currentTime;
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+
+    oscillator.type = 'triangle';
+    oscillator.frequency.value = 880;
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.12, now + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.14);
+
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+    oscillator.start(now);
+    oscillator.stop(now + 0.14);
+  };
+
+  if (audioContext.state === 'suspended') {
+    audioContext.resume().then(playTone).catch(() => {});
+  } else {
+    playTone();
+  }
 }
 
 // Detect if device supports hover (non-touch)
@@ -31,6 +51,7 @@ function openLetter() {
   overlay.setAttribute('aria-hidden', 'false');
   envelope.setAttribute('aria-expanded', 'true');
   document.body.classList.add('letter-open');
+  playOpenSound();
   setMusicState(true);
 }
 
@@ -81,7 +102,7 @@ function setMusicState(enabled) {
   musicToggle.setAttribute('aria-label', enabled ? 'Turn off background music' : 'Turn on background music');
 
   if (enabled) {
-    musicAudio.src = MUSIC;
+    musicAudio.src = MUSIC_URL;
     musicAudio.play().catch(err => console.log('Autoplay prevented:', err));
   } else {
     musicAudio.pause();
@@ -94,14 +115,8 @@ envelope?.addEventListener('click', (event) => {
   toggleLetter();
 });
 
-letterCard?.addEventListener('click', (event) => {
-  event.stopPropagation();
-});
-
-overlay?.addEventListener('click', (event) => {
-  if (event.target === overlay) {
-    closeLetter();
-  }
+overlay?.addEventListener('click', () => {
+  closeLetter();
 });
 
 document.addEventListener('keydown', (event) => {
