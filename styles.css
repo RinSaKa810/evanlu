@@ -19,8 +19,14 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 1rem;
+  padding: 0.75rem;
   background: radial-gradient(circle at top, #f8fbff 0%, #e9eff8 35%, #d9e1eb 100%);
+}
+
+@media (min-width: 360px) {
+  body {
+    padding: 1rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -37,7 +43,7 @@ body {
 .hero {
   display: grid;
   place-items: center;
-  min-height: 60vh;
+  min-height: 55vh;
 }
 
 @media (min-width: 768px) {
@@ -52,8 +58,8 @@ body {
 
 .envelope {
   position: relative;
-  width: 160px;
-  height: 100px;
+  width: 140px;
+  height: 88px;
   border: none;
   background: transparent;
   padding: 0;
@@ -61,6 +67,15 @@ body {
   transition: transform 0.2s ease, filter 0.2s ease;
   transform-style: preserve-3d;
   perspective: 800px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 360px) {
+  .envelope {
+    width: 160px;
+    height: 100px;
+  }
 }
 
 @media (min-width: 480px) {
@@ -86,23 +101,25 @@ body {
 .envelope-body,
 .envelope-flap {
   position: absolute;
-  left: 0;
-  right: 0;
+  left: -15px;
+  right: -15px;
   background: #fefefe;
-  border-radius: 16px;
+  border-radius: 25px;
   box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.08);
 }
 
 .envelope-body {
   bottom: 0;
-  height: 110px;
-  border-radius: 0 0 16px 16px;
+  height: 120%;
+  border-radius: 25px;
   background: linear-gradient(180deg, #fcfcfd 0%, #f7f8fb 100%);
 }
 
 .envelope-flap {
-  top: 0;
-  height: 108px;
+  top: -30px;
+  margin-bottom: -1px;
+  z-index: 2;
+  height: 81%;
   clip-path: polygon(0 0, 100% 0, 100% 60%, 52% 100%, 48% 100%, 0 60%);
   transform-origin: center bottom;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -156,6 +173,35 @@ body {
 .heart::after {
   left: 10px;
   top: 0;
+}
+
+.envelope-wrapper > p {
+  margin: 0.5rem auto 0;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+
+@media (min-width: 360px) {
+  .envelope-wrapper > p {
+    margin: 0.6rem auto 0;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 480px) {
+  .envelope-wrapper > p {
+    margin: 0.75rem auto 0;
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .envelope-wrapper > p {
+    margin: 0.9rem auto 0;
+    font-size: 0.9rem;
+  }
 }
 
 .music-controls {
@@ -231,21 +277,30 @@ body {
 }
 
 .hint {
-  margin: 0.75rem auto 0;
-  color: #475569;
-  font-size: 0.85rem;
+  margin: 1rem auto 0.3rem;
+  color: #64748b;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+}
+
+@media (min-width: 360px) {
+  .hint {
+    margin: 1.1rem auto 0.4rem;
+    font-size: 0.85rem;
+  }
 }
 
 @media (min-width: 480px) {
   .hint {
-    margin: 0.9rem auto 0;
+    margin: 1.2rem auto 0.5rem;
     font-size: 0.9rem;
   }
 }
 
 @media (min-width: 768px) {
   .hint {
-    margin: 1rem auto 0;
+    margin: 1.4rem auto 0.6rem;
     font-size: 0.95rem;
   }
 }
@@ -431,8 +486,31 @@ body {
 }
 
 .letter-card .letter-content {
-  overflow: auto;
-  padding-right: 0.25rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar styling */
+.letter-card .letter-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.letter-card .letter-content::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.05);
+  border-radius: 10px;
+}
+
+.letter-card .letter-content::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.2);
+  border-radius: 10px;
+}
+
+.letter-card .letter-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.3);
 }
 
 .letter-card .letter-content p {
@@ -477,6 +555,84 @@ body {
 @media (min-width: 768px) {
   .letter-name {
     font-size: 1.6rem;
+  }
+}
+
+.letter-reply {
+  margin: 2rem 0 0 0;
+  padding: 1.5rem 0 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 2px solid #ef476f;
+  display: block;
+  flex-shrink: 0;
+}
+
+.letter-reply a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  display: inline-block;
+  font-weight: 700;
+  background-color: #ef476f;
+  cursor: pointer;
+  white-space: normal;
+  box-shadow: 0 4px 12px rgba(239, 71, 111, 0.3);
+}
+
+.letter-reply a:hover {
+  color: #fff;
+  background-color: #d9335a;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(239, 71, 111, 0.4);
+}
+
+.letter-reply a strong {
+  font-weight: 700;
+}
+
+.letter-reply a em {
+  font-style: italic;
+}
+
+@media (min-width: 360px) {
+  .letter-reply {
+    margin: 2rem 0 0 0;
+    padding: 1.5rem 0 0 0;
+    font-size: 0.95rem;
+  }
+  
+  .letter-reply a {
+    padding: 0.9rem 1.3rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 480px) {
+  .letter-reply {
+    margin: 2rem 0 0 0;
+    padding: 1.5rem 0 0 0;
+    font-size: 1rem;
+  }
+  
+  .letter-reply a {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .letter-reply {
+    margin: 2.5rem 0 0 0;
+    padding: 2rem 0 0 0;
+    font-size: 1.05rem;
+  }
+  
+  .letter-reply a {
+    padding: 1.1rem 1.8rem;
+    font-size: 1.05rem;
   }
 }
 
