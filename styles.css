@@ -20,7 +20,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   padding: 0.75rem;
-  background: radial-gradient(circle at top, #f8fbff 0%, #e9eff8 35%, #d9e1eb 100%);
+  background: radial-gradient(circle , #DBE5ED 0%, #C3D4E8 35%, #7691B0 100%);
 }
 
 @media (min-width: 360px) {
@@ -149,29 +149,30 @@ body {
 
 .heart {
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 15px;
   background: #ef476f;
   transform: rotate(-45deg);
+  margin-top: 6px; 
 }
 
 .heart::before,
 .heart::after {
   content: "";
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 15px;
   border-radius: 50%;
   background: #ef476f;
 }
 
 .heart::before {
-  top: -10px;
+  top: -8px;
   left: 0;
 }
 
 .heart::after {
-  left: 10px;
+  left: 8px;
   top: 0;
 }
 
@@ -200,7 +201,7 @@ body {
 @media (min-width: 768px) {
   .envelope-wrapper > p {
     margin: 0.9rem auto 0;
-    font-size: 0.9rem;
+    font-size: 1.9rem;
   }
 }
 
